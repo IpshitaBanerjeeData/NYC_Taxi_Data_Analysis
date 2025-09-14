@@ -1,2 +1,48 @@
-# NYC_Taxi_Data_Analysis
+# NYC Taxi Data Analysis: A Deep Dive into Urban Transportation
+
+### Project Overview
 This project transforms over 2.6 million NYC taxi trip records into actionable insights by analyzing urban traffic patterns, customer behavior, and key business metrics for city planning and transportation companies.
+
+### Data Sources
+* **NYC Taxi Data:** The raw data for this project was sourced from the NYC Taxi & Limousine Commission.
+    * **Yellow Taxi Trip Data:** https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
+* **NYC Taxi Zone Data:** A lookup table for borough and zone names.
+    * **NYC Taxi Zones:** https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
+
+### Key Questions & Findings
+* **What are the busiest hours for taxi pickups?**
+    * **Finding:** Our analysis shows a clear peak in taxi demand during the evening commute, from 5 PM to 7 PM.
+
+* **How does trip duration differ between weekdays and weekends?**
+    * **Finding:** Average trip durations are significantly longer on weekdays, particularly Thursday and Wednesday, suggesting the impact of traffic congestion from commuter travel.
+
+* **What is the distribution of payment methods?**
+    * **Finding:** The vast majority of customers (over 84%) prefer to pay with a credit card, indicating a strong preference for digital payment systems over cash transactions.
+
+* **What are the busiest pickup locations?**
+    * **Finding:** The busiest pickup locations are major transportation hubs and commercial centers, such as JFK Airport and Midtown.
+
+* **What is the average cost per mile?**
+    * **Finding:** The average cost per mile for a taxi trip in July is $5.65, a crucial Key Performance Indicator (KPI) for understanding pricing, profitability, and operational efficiency.
+
+### Tools & Technologies Used
+* **Python:** Used for data cleaning, preparation, and initial data parsing of the large dataset.
+* **SQL (SQLite):** Used to perform complex exploratory data analysis and aggregate millions of rows of data efficiently.
+* **Tableau Public:** Used to create professional, interactive visualizations and a data-driven story to communicate key insights.
+* **GitHub:** Used for project management, version control, and to host all project files.
+
+### Business Recommendations
+Based on the analysis, a taxi company could:
+* **Implement Dynamic Pricing:** During the evening rush hour to manage demand and maximize revenue.
+* **Strategic Vehicle Deployment:** Incentivize drivers to operate in key urban hubs and airports to meet high demand.
+* **Optimize Digital Payment Systems:** Ensure a seamless and reliable credit card payment process to align with customer preference.
+
+### Project Files
+* `data_cleaning.py`: Python script for data preparation.
+* `sql_queries.sql`: The SQL queries used for data analysis.
+* `NYC_Taxi_Analysis.twbx`: The Tableau workbook file.
+* `cleaned_nyc_taxi_data.parquet`: The cleaned dataset.
+* `taxi_zones.csv`: The lookup table for location names.
+
+* ### Interactive Visualization
+* **Interactive Tableau Story:** https://public.tableau.com/app/profile/ipshita.banerjee/viz/Yellow_Taxi_Data/NYCTaxiAnalysis?publish=yes
