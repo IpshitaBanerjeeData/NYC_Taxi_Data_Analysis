@@ -1,0 +1,2245 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20252.25.0818.1050                               -->
+<workbook original-version='18.1' source-build='2025.2.2 (20252.25.0818.1050)' source-platform='win' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+  </document-format-change-manifest>
+  <repository-location id='Yellow_Taxi_Data' path='/workbooks' revision='1.0' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='cleaned_nyc_taxi_data' inline='true' name='federated.0hzjhjw0mgto12146ypix1xxqq5k' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='cleaned_nyc_taxi_data' name='textscan.1mirvbj0lb6vgn1dwsfkp0epv5o7'>
+            <connection class='textscan' directory='C:/Users/ipshi/OneDrive/Desktop/Analyzing Urban Traffic and Public Transit for City Planning' filename='cleaned_nyc_taxi_data.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+          <named-connection caption='taxi_zone_lookup' name='textscan.1yx0ipl1exrcds19h3wyv1n5dzd9'>
+            <connection class='textscan' directory='C:/Users/ipshi/OneDrive/Desktop/Analyzing Urban Traffic and Public Transit for City Planning' filename='taxi_zone_lookup.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='textscan.1mirvbj0lb6vgn1dwsfkp0epv5o7' name='cleaned_nyc_taxi_data.csv' table='[cleaned_nyc_taxi_data#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+              <column datatype='integer' name='VendorID' ordinal='0' />
+              <column datatype='datetime' name='tpep_pickup_datetime' ordinal='1' />
+              <column datatype='datetime' name='tpep_dropoff_datetime' ordinal='2' />
+              <column datatype='integer' name='passenger_count' ordinal='3' />
+              <column datatype='real' name='trip_distance' ordinal='4' />
+              <column datatype='real' name='RatecodeID' ordinal='5' />
+              <column datatype='string' name='store_and_fwd_flag' ordinal='6' />
+              <column datatype='integer' name='PULocationID' ordinal='7' />
+              <column datatype='integer' name='DOLocationID' ordinal='8' />
+              <column datatype='integer' name='payment_type' ordinal='9' />
+              <column datatype='real' name='fare_amount' ordinal='10' />
+              <column datatype='real' name='extra' ordinal='11' />
+              <column datatype='real' name='mta_tax' ordinal='12' />
+              <column datatype='real' name='tip_amount' ordinal='13' />
+              <column datatype='real' name='tolls_amount' ordinal='14' />
+              <column datatype='real' name='improvement_surcharge' ordinal='15' />
+              <column datatype='real' name='total_amount' ordinal='16' />
+              <column datatype='real' name='congestion_surcharge' ordinal='17' />
+              <column datatype='real' name='Airport_fee' ordinal='18' />
+              <column datatype='real' name='cbd_congestion_fee' ordinal='19' />
+              <column datatype='real' name='trip_duration_minutes' ordinal='20' />
+            </columns>
+          </relation>
+          <relation connection='textscan.1yx0ipl1exrcds19h3wyv1n5dzd9' name='taxi_zone_lookup.csv' table='[taxi_zone_lookup#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+              <column datatype='integer' name='LocationID' ordinal='0' />
+              <column datatype='string' name='Borough' ordinal='1' />
+              <column datatype='string' name='Zone' ordinal='2' />
+              <column datatype='string' name='service_zone' ordinal='3' />
+            </columns>
+          </relation>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[cleaned_nyc_taxi_data.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₹&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_IN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[taxi_zone_lookup.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₹&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_IN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>VendorID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[VendorID]</local-name>
+            <parent-name>[cleaned_nyc_taxi_data.csv]</parent-name>
+            <remote-alias>VendorID</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tpep_pickup_datetime</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[tpep_pickup_datetime]</local-name>
+            <parent-name>[cleaned_nyc_taxi_data.csv]</parent-name>
+            <remote-alias>tpep_pickup_datetime</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tpep_dropoff_datetime</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[tpep_dropoff_datetime]</local-name>
+            <parent-name>[cleaned_nyc_taxi_data.csv]</parent-name>
+            <remote-alias>tpep_dropoff_datetime</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>passenger_count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[passenger_count]</local-name>
+            <parent-name>[cleaned_nyc_taxi_data.csv]</parent-name>
+            <remote-alias>passenger_count</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>trip_distance</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[trip_distance]</local-name>
+            <parent-name>[cleaned_nyc_taxi_data.csv]</parent-name>
+            <remote-alias>trip_distance</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RatecodeID</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[RatecodeID]</local-name>
+            <parent-name>[cleaned_nyc_taxi_data.csv]</parent-name>
+            <remote-alias>RatecodeID</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>store_and_fwd_flag</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[store_and_fwd_flag]</local-name>
+            <parent-name>[cleaned_nyc_taxi_data.csv]</parent-name>
+            <remote-alias>store_and_fwd_flag</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PULocationID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[PULocationID]</local-name>
+            <parent-name>[cleaned_nyc_taxi_data.csv]</parent-name>
+            <remote-alias>PULocationID</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DOLocationID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DOLocationID]</local-name>
+            <parent-name>[cleaned_nyc_taxi_data.csv]</parent-name>
+            <remote-alias>DOLocationID</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>payment_type</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[payment_type]</local-name>
+            <parent-name>[cleaned_nyc_taxi_data.csv]</parent-name>
+            <remote-alias>payment_type</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>fare_amount</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[fare_amount]</local-name>
+            <parent-name>[cleaned_nyc_taxi_data.csv]</parent-name>
+            <remote-alias>fare_amount</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>extra</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[extra]</local-name>
+            <parent-name>[cleaned_nyc_taxi_data.csv]</parent-name>
+            <remote-alias>extra</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>mta_tax</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[mta_tax]</local-name>
+            <parent-name>[cleaned_nyc_taxi_data.csv]</parent-name>
+            <remote-alias>mta_tax</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tip_amount</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[tip_amount]</local-name>
+            <parent-name>[cleaned_nyc_taxi_data.csv]</parent-name>
+            <remote-alias>tip_amount</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tolls_amount</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[tolls_amount]</local-name>
+            <parent-name>[cleaned_nyc_taxi_data.csv]</parent-name>
+            <remote-alias>tolls_amount</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>improvement_surcharge</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[improvement_surcharge]</local-name>
+            <parent-name>[cleaned_nyc_taxi_data.csv]</parent-name>
+            <remote-alias>improvement_surcharge</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_amount</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[total_amount]</local-name>
+            <parent-name>[cleaned_nyc_taxi_data.csv]</parent-name>
+            <remote-alias>total_amount</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>congestion_surcharge</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[congestion_surcharge]</local-name>
+            <parent-name>[cleaned_nyc_taxi_data.csv]</parent-name>
+            <remote-alias>congestion_surcharge</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Airport_fee</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Airport_fee]</local-name>
+            <parent-name>[cleaned_nyc_taxi_data.csv]</parent-name>
+            <remote-alias>Airport_fee</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cbd_congestion_fee</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[cbd_congestion_fee]</local-name>
+            <parent-name>[cleaned_nyc_taxi_data.csv]</parent-name>
+            <remote-alias>cbd_congestion_fee</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>trip_duration_minutes</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[trip_duration_minutes]</local-name>
+            <parent-name>[cleaned_nyc_taxi_data.csv]</parent-name>
+            <remote-alias>trip_duration_minutes</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LocationID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[LocationID]</local-name>
+            <parent-name>[taxi_zone_lookup.csv]</parent-name>
+            <remote-alias>LocationID</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[taxi_zone_lookup.csv_F774454FB68C47389BAAC63479D710EE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Borough</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Borough]</local-name>
+            <parent-name>[taxi_zone_lookup.csv]</parent-name>
+            <remote-alias>Borough</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[taxi_zone_lookup.csv_F774454FB68C47389BAAC63479D710EE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Zone</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Zone]</local-name>
+            <parent-name>[taxi_zone_lookup.csv]</parent-name>
+            <remote-alias>Zone</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[taxi_zone_lookup.csv_F774454FB68C47389BAAC63479D710EE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>service_zone</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[service_zone]</local-name>
+            <parent-name>[taxi_zone_lookup.csv]</parent-name>
+            <remote-alias>service_zone</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[taxi_zone_lookup.csv_F774454FB68C47389BAAC63479D710EE]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Airport fee' datatype='real' name='[Airport_fee]' role='measure' type='quantitative' />
+      <column caption='Payment Method Name' datatype='string' name='[Calculation_802766686818545664]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='CASE [payment_type]&#13;&#10;    WHEN 1 THEN &apos;Credit Card&apos;&#13;&#10;    WHEN 2 THEN &apos;Cash&apos;&#13;&#10;    WHEN 3 THEN &apos;No Charge&apos;&#13;&#10;    WHEN 4 THEN &apos;Dispute&apos;&#13;&#10;    WHEN 5 THEN &apos;Unknown&apos;&#13;&#10;    WHEN 6 THEN &apos;Voided Trip&apos;&#13;&#10;END' />
+      </column>
+      <column caption='Avg Cost Per Mile' datatype='real' name='[Calculation_802766686822010881]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='AVG([fare_amount]) / AVG([trip_distance])' />
+      </column>
+      <column caption='DO Location ID' datatype='integer' name='[DOLocationID]' role='dimension' type='ordinal' />
+      <column caption='Location ID' datatype='integer' name='[LocationID]' role='dimension' type='ordinal' />
+      <column caption='PU Location ID' datatype='integer' name='[PULocationID]' role='dimension' type='ordinal' />
+      <column caption='Ratecode ID' datatype='real' name='[RatecodeID]' role='dimension' type='ordinal' />
+      <column caption='Vendor ID' datatype='integer' name='[VendorID]' role='dimension' type='ordinal' />
+      <column caption='cleaned_nyc_taxi_data.csv' datatype='table' name='[__tableau_internal_object_id__].[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]' role='measure' type='quantitative' />
+      <column caption='taxi_zone_lookup.csv' datatype='table' name='[__tableau_internal_object_id__].[taxi_zone_lookup.csv_F774454FB68C47389BAAC63479D710EE]' role='measure' type='quantitative' />
+      <column caption='Cbd Congestion Fee' datatype='real' name='[cbd_congestion_fee]' role='measure' type='quantitative' />
+      <column caption='Congestion Surcharge' datatype='real' name='[congestion_surcharge]' role='measure' type='quantitative' />
+      <column caption='Extra' datatype='real' name='[extra]' role='measure' type='quantitative' />
+      <column caption='Fare Amount' datatype='real' name='[fare_amount]' role='measure' type='quantitative' />
+      <column caption='Improvement Surcharge' datatype='real' name='[improvement_surcharge]' role='measure' type='quantitative' />
+      <column caption='Mta Tax' datatype='real' name='[mta_tax]' role='measure' type='quantitative' />
+      <column caption='Passenger Count' datatype='integer' name='[passenger_count]' role='measure' type='quantitative' />
+      <column caption='Payment Type' datatype='integer' name='[payment_type]' role='measure' type='quantitative' />
+      <column caption='Service Zone' datatype='string' name='[service_zone]' role='dimension' type='nominal' />
+      <column caption='Store And Fwd Flag' datatype='string' name='[store_and_fwd_flag]' role='dimension' type='nominal' />
+      <column caption='Tip Amount' datatype='real' name='[tip_amount]' role='measure' type='quantitative' />
+      <column caption='Tolls Amount' datatype='real' name='[tolls_amount]' role='measure' type='quantitative' />
+      <column caption='Total Amount' datatype='real' name='[total_amount]' role='measure' type='quantitative' />
+      <column caption='Tpep Dropoff Datetime' datatype='datetime' name='[tpep_dropoff_datetime]' role='dimension' type='ordinal' />
+      <column caption='Tpep Pickup Datetime' datatype='datetime' name='[tpep_pickup_datetime]' role='dimension' type='ordinal' />
+      <column caption='Trip Distance' datatype='real' name='[trip_distance]' role='measure' type='quantitative' />
+      <column caption='Trip Duration Minutes' datatype='real' name='[trip_duration_minutes]' role='measure' type='quantitative' />
+      <column-instance column='[Calculation_802766686818545664]' derivation='None' name='[none:Calculation_802766686818545664:nk]' pivot='key' type='nominal' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/ipshi/OneDrive/Desktop/Analyzing Urban Traffic and Public Transit for City Planning/cleaned_nyc_taxi_data.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='09/14/2025 06:45:35 AM' username='tableau_internal_user'>
+          <relation type='collection'>
+            <relation name='cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97' table='[Extract].[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]' type='table' />
+            <relation name='taxi_zone_lookup.csv_F774454FB68C47389BAAC63479D710EE' table='[Extract].[taxi_zone_lookup.csv_F774454FB68C47389BAAC63479D710EE]' type='table' />
+          </relation>
+          <refresh>
+            <refresh-event add-from-file-path='cleaned_nyc_taxi_data' increment-value='%null%' refresh-type='create' rows-inserted='2728875' timestamp-start='2025-09-14 06:44:41.892' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>VendorID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[VendorID]</local-name>
+              <parent-name>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</parent-name>
+              <remote-alias>VendorID</remote-alias>
+              <ordinal>0</ordinal>
+              <family>cleaned_nyc_taxi_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>tpep_pickup_datetime</remote-name>
+              <remote-type>135</remote-type>
+              <local-name>[tpep_pickup_datetime]</local-name>
+              <parent-name>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</parent-name>
+              <remote-alias>tpep_pickup_datetime</remote-alias>
+              <ordinal>1</ordinal>
+              <family>cleaned_nyc_taxi_data.csv</family>
+              <local-type>datetime</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>2200510</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>tpep_dropoff_datetime</remote-name>
+              <remote-type>135</remote-type>
+              <local-name>[tpep_dropoff_datetime]</local-name>
+              <parent-name>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</parent-name>
+              <remote-alias>tpep_dropoff_datetime</remote-alias>
+              <ordinal>2</ordinal>
+              <family>cleaned_nyc_taxi_data.csv</family>
+              <local-type>datetime</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>2254412</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>passenger_count</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[passenger_count]</local-name>
+              <parent-name>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</parent-name>
+              <remote-alias>passenger_count</remote-alias>
+              <ordinal>3</ordinal>
+              <family>cleaned_nyc_taxi_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>trip_distance</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[trip_distance]</local-name>
+              <parent-name>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</parent-name>
+              <remote-alias>trip_distance</remote-alias>
+              <ordinal>4</ordinal>
+              <family>cleaned_nyc_taxi_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>7900</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>RatecodeID</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[RatecodeID]</local-name>
+              <parent-name>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</parent-name>
+              <remote-alias>RatecodeID</remote-alias>
+              <ordinal>5</ordinal>
+              <family>cleaned_nyc_taxi_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>store_and_fwd_flag</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[store_and_fwd_flag]</local-name>
+              <parent-name>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</parent-name>
+              <remote-alias>store_and_fwd_flag</remote-alias>
+              <ordinal>6</ordinal>
+              <family>cleaned_nyc_taxi_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PULocationID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[PULocationID]</local-name>
+              <parent-name>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</parent-name>
+              <remote-alias>PULocationID</remote-alias>
+              <ordinal>7</ordinal>
+              <family>cleaned_nyc_taxi_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>510</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DOLocationID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[DOLocationID]</local-name>
+              <parent-name>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</parent-name>
+              <remote-alias>DOLocationID</remote-alias>
+              <ordinal>8</ordinal>
+              <family>cleaned_nyc_taxi_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>409</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>payment_type</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[payment_type]</local-name>
+              <parent-name>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</parent-name>
+              <remote-alias>payment_type</remote-alias>
+              <ordinal>9</ordinal>
+              <family>cleaned_nyc_taxi_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>fare_amount</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[fare_amount]</local-name>
+              <parent-name>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</parent-name>
+              <remote-alias>fare_amount</remote-alias>
+              <ordinal>10</ordinal>
+              <family>cleaned_nyc_taxi_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1616</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>extra</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[extra]</local-name>
+              <parent-name>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</parent-name>
+              <remote-alias>extra</remote-alias>
+              <ordinal>11</ordinal>
+              <family>cleaned_nyc_taxi_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>33</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>mta_tax</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[mta_tax]</local-name>
+              <parent-name>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</parent-name>
+              <remote-alias>mta_tax</remote-alias>
+              <ordinal>12</ordinal>
+              <family>cleaned_nyc_taxi_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>tip_amount</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[tip_amount]</local-name>
+              <parent-name>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</parent-name>
+              <remote-alias>tip_amount</remote-alias>
+              <ordinal>13</ordinal>
+              <family>cleaned_nyc_taxi_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6808</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>tolls_amount</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[tolls_amount]</local-name>
+              <parent-name>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</parent-name>
+              <remote-alias>tolls_amount</remote-alias>
+              <ordinal>14</ordinal>
+              <family>cleaned_nyc_taxi_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>641</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>improvement_surcharge</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[improvement_surcharge]</local-name>
+              <parent-name>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</parent-name>
+              <remote-alias>improvement_surcharge</remote-alias>
+              <ordinal>15</ordinal>
+              <family>cleaned_nyc_taxi_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_amount</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[total_amount]</local-name>
+              <parent-name>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</parent-name>
+              <remote-alias>total_amount</remote-alias>
+              <ordinal>16</ordinal>
+              <family>cleaned_nyc_taxi_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>18944</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>congestion_surcharge</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[congestion_surcharge]</local-name>
+              <parent-name>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</parent-name>
+              <remote-alias>congestion_surcharge</remote-alias>
+              <ordinal>17</ordinal>
+              <family>cleaned_nyc_taxi_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Airport_fee</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Airport_fee]</local-name>
+              <parent-name>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</parent-name>
+              <remote-alias>Airport_fee</remote-alias>
+              <ordinal>18</ordinal>
+              <family>cleaned_nyc_taxi_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>cbd_congestion_fee</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[cbd_congestion_fee]</local-name>
+              <parent-name>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</parent-name>
+              <remote-alias>cbd_congestion_fee</remote-alias>
+              <ordinal>19</ordinal>
+              <family>cleaned_nyc_taxi_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>trip_duration_minutes</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[trip_duration_minutes]</local-name>
+              <parent-name>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</parent-name>
+              <remote-alias>trip_duration_minutes</remote-alias>
+              <ordinal>20</ordinal>
+              <family>cleaned_nyc_taxi_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>14269</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>LocationID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[LocationID]</local-name>
+              <parent-name>[taxi_zone_lookup.csv_F774454FB68C47389BAAC63479D710EE]</parent-name>
+              <remote-alias>LocationID</remote-alias>
+              <ordinal>21</ordinal>
+              <family>taxi_zone_lookup.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>265</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[taxi_zone_lookup.csv_F774454FB68C47389BAAC63479D710EE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Borough</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Borough]</local-name>
+              <parent-name>[taxi_zone_lookup.csv_F774454FB68C47389BAAC63479D710EE]</parent-name>
+              <remote-alias>Borough</remote-alias>
+              <ordinal>22</ordinal>
+              <family>taxi_zone_lookup.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[taxi_zone_lookup.csv_F774454FB68C47389BAAC63479D710EE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Zone</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Zone]</local-name>
+              <parent-name>[taxi_zone_lookup.csv_F774454FB68C47389BAAC63479D710EE]</parent-name>
+              <remote-alias>Zone</remote-alias>
+              <ordinal>23</ordinal>
+              <family>taxi_zone_lookup.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>262</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[taxi_zone_lookup.csv_F774454FB68C47389BAAC63479D710EE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>service_zone</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[service_zone]</local-name>
+              <parent-name>[taxi_zone_lookup.csv_F774454FB68C47389BAAC63479D710EE]</parent-name>
+              <remote-alias>service_zone</remote-alias>
+              <ordinal>24</ordinal>
+              <family>taxi_zone_lookup.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[taxi_zone_lookup.csv_F774454FB68C47389BAAC63479D710EE]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Calculation_802766686818545664:nk]' palette='purple_pink_gray_10_0' type='palette'>
+            <map to='#7c7270'>
+              <bucket>&quot;Dispute&quot;</bucket>
+            </map>
+            <map to='#8074a8'>
+              <bucket>&quot;Cash&quot;</bucket>
+            </map>
+            <map to='#b173a0'>
+              <bucket>&quot;Credit Card&quot;</bucket>
+            </map>
+            <map to='#ffbed1'>
+              <bucket>&quot;No Charge&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='VendorID' />
+        <field-sort-custom-order field='tpep_pickup_datetime' />
+        <field-sort-custom-order field='tpep_dropoff_datetime' />
+        <field-sort-custom-order field='Calculation_802766686822010881' />
+        <field-sort-custom-order field='passenger_count' />
+        <field-sort-custom-order field='trip_distance' />
+        <field-sort-custom-order field='RatecodeID' />
+        <field-sort-custom-order field='store_and_fwd_flag' />
+        <field-sort-custom-order field='PULocationID' />
+        <field-sort-custom-order field='DOLocationID' />
+        <field-sort-custom-order field='payment_type' />
+        <field-sort-custom-order field='Calculation_802766686818545664' />
+        <field-sort-custom-order field='fare_amount' />
+        <field-sort-custom-order field='extra' />
+        <field-sort-custom-order field='mta_tax' />
+        <field-sort-custom-order field='tip_amount' />
+        <field-sort-custom-order field='tolls_amount' />
+        <field-sort-custom-order field='improvement_surcharge' />
+        <field-sort-custom-order field='total_amount' />
+        <field-sort-custom-order field='congestion_surcharge' />
+        <field-sort-custom-order field='Airport_fee' />
+        <field-sort-custom-order field='cbd_congestion_fee' />
+        <field-sort-custom-order field='trip_duration_minutes' />
+        <field-sort-custom-order field='Geometry (generated)' />
+        <field-sort-custom-order field='Latitude (generated)' />
+        <field-sort-custom-order field='Longitude (generated)' />
+        <field-sort-custom-order field=':Measure Names' />
+        <field-sort-custom-order field='Multiple Values' />
+      </field-sort-info>
+      <object-graph>
+        <objects>
+          <object caption='cleaned_nyc_taxi_data.csv' id='cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97'>
+            <properties context=''>
+              <relation connection='textscan.1mirvbj0lb6vgn1dwsfkp0epv5o7' name='cleaned_nyc_taxi_data.csv' table='[cleaned_nyc_taxi_data#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                  <column datatype='integer' name='VendorID' ordinal='0' />
+                  <column datatype='datetime' name='tpep_pickup_datetime' ordinal='1' />
+                  <column datatype='datetime' name='tpep_dropoff_datetime' ordinal='2' />
+                  <column datatype='integer' name='passenger_count' ordinal='3' />
+                  <column datatype='real' name='trip_distance' ordinal='4' />
+                  <column datatype='real' name='RatecodeID' ordinal='5' />
+                  <column datatype='string' name='store_and_fwd_flag' ordinal='6' />
+                  <column datatype='integer' name='PULocationID' ordinal='7' />
+                  <column datatype='integer' name='DOLocationID' ordinal='8' />
+                  <column datatype='integer' name='payment_type' ordinal='9' />
+                  <column datatype='real' name='fare_amount' ordinal='10' />
+                  <column datatype='real' name='extra' ordinal='11' />
+                  <column datatype='real' name='mta_tax' ordinal='12' />
+                  <column datatype='real' name='tip_amount' ordinal='13' />
+                  <column datatype='real' name='tolls_amount' ordinal='14' />
+                  <column datatype='real' name='improvement_surcharge' ordinal='15' />
+                  <column datatype='real' name='total_amount' ordinal='16' />
+                  <column datatype='real' name='congestion_surcharge' ordinal='17' />
+                  <column datatype='real' name='Airport_fee' ordinal='18' />
+                  <column datatype='real' name='cbd_congestion_fee' ordinal='19' />
+                  <column datatype='real' name='trip_duration_minutes' ordinal='20' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97' table='[Extract].[cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97]' type='table' />
+            </properties>
+          </object>
+          <object caption='taxi_zone_lookup.csv' id='taxi_zone_lookup.csv_F774454FB68C47389BAAC63479D710EE'>
+            <properties context=''>
+              <relation connection='textscan.1yx0ipl1exrcds19h3wyv1n5dzd9' name='taxi_zone_lookup.csv' table='[taxi_zone_lookup#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                  <column datatype='integer' name='LocationID' ordinal='0' />
+                  <column datatype='string' name='Borough' ordinal='1' />
+                  <column datatype='string' name='Zone' ordinal='2' />
+                  <column datatype='string' name='service_zone' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='taxi_zone_lookup.csv_F774454FB68C47389BAAC63479D710EE' table='[Extract].[taxi_zone_lookup.csv_F774454FB68C47389BAAC63479D710EE]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[PULocationID]' />
+              <expression op='[LocationID]' />
+            </expression>
+            <first-end-point object-id='cleaned_nyc_taxi_data.csv_C95850AD0906455085900F3FD901AF97' />
+            <second-end-point object-id='taxi_zone_lookup.csv_F774454FB68C47389BAAC63479D710EE' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Viz 1: Peak Hours'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000'>NYC Taxi Pickups by Hour of Day</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='cleaned_nyc_taxi_data' name='federated.0hzjhjw0mgto12146ypix1xxqq5k' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0hzjhjw0mgto12146ypix1xxqq5k'>
+            <column-instance column='[tpep_pickup_datetime]' derivation='Count' name='[cnt:tpep_pickup_datetime:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[tpep_pickup_datetime]' derivation='Hour' name='[hr:tpep_pickup_datetime:ok]' pivot='key' type='ordinal' />
+            <column caption='Tpep Pickup Datetime' datatype='datetime' name='[tpep_pickup_datetime]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <natural-sort column='[federated.0hzjhjw0mgto12146ypix1xxqq5k].[hr:tpep_pickup_datetime:ok]' direction='DESC' />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#c290b4' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0hzjhjw0mgto12146ypix1xxqq5k].[cnt:tpep_pickup_datetime:qk]</rows>
+        <cols>[federated.0hzjhjw0mgto12146ypix1xxqq5k].[hr:tpep_pickup_datetime:ok]</cols>
+      </table>
+      <simple-id uuid='{CB04F598-631C-4A87-90F5-FDDCA9AA0DB4}' />
+    </worksheet>
+    <worksheet name='Viz 2: Trip Duration'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000' fontname='Benton Sans Book'>Average Trip Duration by Day of the Week</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='cleaned_nyc_taxi_data' name='federated.0hzjhjw0mgto12146ypix1xxqq5k' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0hzjhjw0mgto12146ypix1xxqq5k'>
+            <column-instance column='[trip_duration_minutes]' derivation='Avg' name='[avg:trip_duration_minutes:qk]' pivot='key' type='quantitative' />
+            <column caption='Tpep Pickup Datetime' datatype='datetime' name='[tpep_pickup_datetime]' role='dimension' type='ordinal' />
+            <column caption='Trip Duration Minutes' datatype='real' name='[trip_duration_minutes]' role='measure' type='quantitative' />
+            <column-instance column='[tpep_pickup_datetime]' derivation='Weekday' name='[wd:tpep_pickup_datetime:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <computed-sort column='[federated.0hzjhjw0mgto12146ypix1xxqq5k].[wd:tpep_pickup_datetime:ok]' direction='DESC' using='[federated.0hzjhjw0mgto12146ypix1xxqq5k].[avg:trip_duration_minutes:qk]' />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#cc879e' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0hzjhjw0mgto12146ypix1xxqq5k].[avg:trip_duration_minutes:qk]</rows>
+        <cols>[federated.0hzjhjw0mgto12146ypix1xxqq5k].[wd:tpep_pickup_datetime:ok]</cols>
+      </table>
+      <simple-id uuid='{8C4B5018-D9CB-457E-97E0-570D9760C8A2}' />
+    </worksheet>
+    <worksheet name='Viz 3: Payments'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000' fontname='Benton Sans Book'>Distribution of Payment Methods for NYC Taxi Trips</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='cleaned_nyc_taxi_data' name='federated.0hzjhjw0mgto12146ypix1xxqq5k' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0hzjhjw0mgto12146ypix1xxqq5k'>
+            <column caption='Payment Method Name' datatype='string' name='[Calculation_802766686818545664]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='CASE [payment_type]&#13;&#10;    WHEN 1 THEN &apos;Credit Card&apos;&#13;&#10;    WHEN 2 THEN &apos;Cash&apos;&#13;&#10;    WHEN 3 THEN &apos;No Charge&apos;&#13;&#10;    WHEN 4 THEN &apos;Dispute&apos;&#13;&#10;    WHEN 5 THEN &apos;Unknown&apos;&#13;&#10;    WHEN 6 THEN &apos;Voided Trip&apos;&#13;&#10;END' />
+            </column>
+            <column caption='Vendor ID' datatype='integer' name='[VendorID]' role='dimension' type='ordinal' />
+            <column-instance column='[VendorID]' derivation='Count' name='[cnt:VendorID:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_802766686818545664]' derivation='None' name='[none:Calculation_802766686818545664:nk]' pivot='key' type='nominal' />
+            <column caption='Payment Type' datatype='integer' name='[payment_type]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <encodings>
+              <color column='[federated.0hzjhjw0mgto12146ypix1xxqq5k].[none:Calculation_802766686818545664:nk]' />
+              <wedge-size column='[federated.0hzjhjw0mgto12146ypix1xxqq5k].[cnt:VendorID:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{CB39A513-41CD-4A44-90EF-4DDCCB533E7C}' />
+    </worksheet>
+    <worksheet name='Viz 4: Busiest Locations'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000' fontname='Benton Sans Book'>Top 10 Busiest NYC Taxi Pickup Locations</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='cleaned_nyc_taxi_data' name='federated.0hzjhjw0mgto12146ypix1xxqq5k' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0hzjhjw0mgto12146ypix1xxqq5k'>
+            <column caption='PU Location ID' datatype='integer' name='[PULocationID]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Zone]' role='dimension' type='nominal' />
+            <column-instance column='[PULocationID]' derivation='Count' name='[cnt:PULocationID:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Zone]' derivation='None' name='[none:Zone:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0hzjhjw0mgto12146ypix1xxqq5k].[none:Zone:nk]'>
+            <groupfilter count='10' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='COUNT([PULocationID])' function='order' user:ui-marker='order'>
+                <groupfilter function='level-members' level='[none:Zone:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <natural-sort column='[federated.0hzjhjw0mgto12146ypix1xxqq5k].[none:Zone:nk]' direction='DESC' />
+          <slices>
+            <column>[federated.0hzjhjw0mgto12146ypix1xxqq5k].[none:Zone:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#d37295' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0hzjhjw0mgto12146ypix1xxqq5k].[none:Zone:nk]</rows>
+        <cols>[federated.0hzjhjw0mgto12146ypix1xxqq5k].[cnt:PULocationID:qk]</cols>
+      </table>
+      <simple-id uuid='{2EDF5075-B96D-4B85-A252-E7D5CAAC03BB}' />
+    </worksheet>
+    <worksheet name='Viz 5: KPI'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='18'>Key Performance Indicator: Average Cost per Mile</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='cleaned_nyc_taxi_data' name='federated.0hzjhjw0mgto12146ypix1xxqq5k' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0hzjhjw0mgto12146ypix1xxqq5k'>
+            <column caption='Avg Cost Per Mile' datatype='real' name='[Calculation_802766686822010881]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='AVG([fare_amount]) / AVG([trip_distance])' />
+            </column>
+            <column caption='Fare Amount' datatype='real' name='[fare_amount]' role='measure' type='quantitative' />
+            <column caption='Trip Distance' datatype='real' name='[trip_distance]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_802766686822010881]' derivation='User' name='[usr:Calculation_802766686822010881:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0hzjhjw0mgto12146ypix1xxqq5k].[usr:Calculation_802766686822010881:qk]' value='c&quot;$&quot;#,##0.00' />
+            <format attr='color' value='#d37295' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.0hzjhjw0mgto12146ypix1xxqq5k].[usr:Calculation_802766686822010881:qk]' value='c&quot;₹ &quot;#,##0.00;&quot;₹ &quot;-#,##0.00' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0hzjhjw0mgto12146ypix1xxqq5k].[usr:Calculation_802766686822010881:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run bold='true' fontsize='12'>&lt;</run>
+                <run bold='true' fontsize='12'>[federated.0hzjhjw0mgto12146ypix1xxqq5k].[usr:Calculation_802766686822010881:qk]</run>
+                <run bold='true' fontsize='12'>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{1E3C2083-7CD0-4A15-8047-834B1724FBC6}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='NYC Taxi Analysis' type='storyboard'>
+      <style>
+        <style-rule element='story-description'>
+          <format attr='border-style' value='dotted' />
+          <format attr='border-width' value='3' />
+          <format attr='background-color' value='#fffffffc' />
+        </style-rule>
+      </style>
+      <size maxheight='964' maxwidth='1016' minheight='964' minwidth='1016' />
+      <zones>
+        <zone h='100000' id='2' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98340' id='1' param='vert' removable='false' type-v2='layout-flow' w='98426' x='787' y='830'>
+            <zone h='4357' id='3' type-v2='title' w='98426' x='787' y='830' />
+            <zone h='10477' id='4' is-fixed='true' paired-zone-id='5' removable='false' type-v2='flipboard-nav' w='98426' x='787' y='5187' />
+            <zone h='83506' id='5' paired-zone-id='4' removable='false' type-v2='flipboard' w='98426' x='787' y='15664'>
+              <flipboard active-id='5' nav-type='caption' show-nav-arrows='true'>
+                <story-points>
+                  <story-point caption='Finding 1: Peak Hours' captured-sheet='Viz 1: Peak Hours' id='1' />
+                  <story-point caption='Finding 2: Weekday vs. Weekend Traffic' captured-sheet='Viz 2: Trip Duration' id='2' />
+                  <story-point caption='Finding 3: Customer Behavior' captured-sheet='Viz 3: Payments' id='3' />
+                  <story-point caption='Finding 4: Key Urban Hubs' captured-sheet='Viz 4: Busiest Locations' id='4' />
+                  <story-point caption='Finding 5: Key Business Metrics' captured-sheet='Viz 5: KPI' id='5' />
+                </story-points>
+              </flipboard>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone flipboard-zone-id='5' h='26452' hidden='true' id='6' story-point-id='1' type-v2='text' w='39173' x='58169' y='21784'>
+          <formatted-text>
+            <run fontalignment='0' fontcolor='#000000' fontname='Benton Sans Book'>Our analysis shows a clear peak in taxi demand during the evening commute, from </run>
+            <run fontalignment='0' fontcolor='#c87239' fontname='Benton Sans Book'>5 PM to 7 PM</run>
+            <run fontalignment='0' fontcolor='#000000' fontname='Benton Sans Book'>. This suggests that traffic and resource management should be a priority during these hours.</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' h='28008' hidden='true' id='7' story-point-id='2' type-v2='text' w='33268' x='58268' y='20228'>
+          <formatted-text>
+            <run fontalignment='0' fontcolor='#000000' fontname='Benton Sans Book'>Average trip durations are significantly longer on weekdays, particularly </run>
+            <run fontalignment='0' fontcolor='#c87239' fontname='Benton Sans Book'>Thursday and Wednesday</run>
+            <run fontalignment='0' fontcolor='#000000' fontname='Benton Sans Book'>, suggesting the impact of traffic congestion from commuter travel.</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' h='13589' hidden='true' id='8' story-point-id='3' type-v2='text' w='69390' x='6201' y='17012'>
+          <formatted-text>
+            <run fontalignment='0' fontcolor='#000000' fontname='Benton Sans Book'>The vast majority of customers (over </run>
+            <run fontalignment='0' fontcolor='#c87239' fontname='Benton Sans Book'>84%</run>
+            <run fontalignment='0' fontcolor='#000000' fontname='Benton Sans Book'>) prefer to pay with a </run>
+            <run fontalignment='0' fontcolor='#c87239' fontname='Benton Sans Book'>credit card</run>
+            <run fontalignment='0' fontcolor='#000000' fontname='Benton Sans Book'>, indicating a strong preference for digital payment systems over cash transactions.</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' forceUpdate='true' h='21058' hidden='true' id='9' story-point-id='4' type-v2='text' w='78543' x='11417' y='50415'>
+          <formatted-text>
+            <run fontalignment='0' fontcolor='#000000' fontname='Benton Sans Book'>The busiest pickup locations are major transportation hubs and commercial centers, such as </run>
+            <run fontalignment='0' fontcolor='#c87239' fontname='Benton Sans Book'>JFK Airport and Midtown</run>
+            <run fontalignment='0' fontcolor='#000000' fontname='Benton Sans Book'>.This is valuable for strategic deployment of vehicles.</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' h='21058' id='10' story-point-id='5' type-v2='text' w='71949' x='13484' y='28008'>
+          <formatted-text>
+            <run fontalignment='0' fontcolor='#000000' fontname='Benton Sans Book'>The average cost per mile for a taxi trip in July is </run>
+            <run fontalignment='0' fontcolor='#c87239' fontname='Benton Sans Book'>$5.65</run>
+            <run fontalignment='0' fontcolor='#000000' fontname='Benton Sans Book'>. This is a crucial Key Performance Indicator (KPI) for understanding pricing, profitability, and operational efficiency.</run>
+          </formatted-text>
+        </zone>
+      </zones>
+      <simple-id uuid='{EE9A5379-57A4-4392-9869-B395A8FFED33}' />
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='worksheet' name='Viz 1: Peak Hours'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <selection-collection>
+          <node-selection select-tuples='false'>
+            <oriented-node-reference orientation='vertical'>
+              <node-reference>
+                <axis>[federated.0hzjhjw0mgto12146ypix1xxqq5k].[cnt:tpep_pickup_datetime:qk]</axis>
+              </node-reference>
+              <page-reference />
+            </oriented-node-reference>
+          </node-selection>
+        </selection-collection>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0hzjhjw0mgto12146ypix1xxqq5k].[yr:tpep_pickup_datetime:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{5DCD06ED-2E46-45B8-9E0C-206279231EC8}' />
+    </window>
+    <window class='worksheet' name='Viz 2: Trip Duration'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0hzjhjw0mgto12146ypix1xxqq5k].[yr:tpep_pickup_datetime:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{1F8B07DA-4F43-4A8C-A279-033E2C15661D}' />
+    </window>
+    <window class='worksheet' name='Viz 3: Payments'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0hzjhjw0mgto12146ypix1xxqq5k].[none:Calculation_802766686818545664:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0hzjhjw0mgto12146ypix1xxqq5k].[none:Calculation_802766686818545664:nk]</field>
+            <field>[federated.0hzjhjw0mgto12146ypix1xxqq5k].[none:VendorID:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{4D9A9EC7-3D0B-4446-848E-320CFCACFC95}' />
+    </window>
+    <window class='worksheet' name='Viz 4: Busiest Locations'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0hzjhjw0mgto12146ypix1xxqq5k].[none:PULocationID:ok]</field>
+            <field>[federated.0hzjhjw0mgto12146ypix1xxqq5k].[none:Zone:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{E5351F87-9373-43BF-A27E-2EC2FC160E83}' />
+    </window>
+    <window class='worksheet' name='Viz 5: KPI'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{1EA999A1-27AB-4EBE-B4AF-052C7248E0DE}' />
+    </window>
+    <window class='dashboard' maximized='true' name='NYC Taxi Analysis'>
+      <viewpoints />
+      <active id='-1' />
+      <simple-id uuid='{7976C6E9-1521-4B52-9C20-19F0C159838B}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='NYC Taxi Analysis' width='192'>
+      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
+      IBQ0EQChoP1/Ftx6GKcY0CgAAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Viz 1: Peak Hours' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Viz 2: Trip Duration' width='192'>
+      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
+      KsoL4Rglb4MGozoewgB0N9fjLVrHppxkfF7ZwIi5TUkAlhQu5cr1awB0tffSm3mTYOsAGUvX
+      UbokfdJsUDOqZstgmSbhcHjy5ZaaqdTRaDRmfVScWdm2Y9aORqMKik/du6rTQsdcl3lI+Qdh
+      2bmZ+PNXsCx5jPPNneiFmZNmgxoeNYOzdMPA5/NNvlxXs+XxeDwx66Ni4J2mxaxtKjqZ+FS9
+      a5qaaX0x12UeUjYbdHR4lNq6i6ypWEdnfR116CxfXTX78kI4SN1s0AmXVN+3BVD3bCPmh/DQ
+      KPU/fGXWdbJWLKP8iT0KOpqZI8cCyQPfrWywZv8aw7Zjv4YL9g4wdLNj1vXTivJJzs0C5GA4
+      MY8Mtwa4+ebxWdcpfvj+8QDI+5TC1SQAwtUkAMLVJADC1SQAwtUkAMLVJADC1SQAwtUkAMLV
+      JADC1SQAwtUkAMLVJADC1SQAwtUkAMLVJADC1SQAwtUkAMLVJADC1SQAwtWUBODWtQZ+cfDw
+      +L/HBjrY/8rrzO5EPEI4T0kA0nIKyctOAsC2TJqutJK/OEtFaSEcpWQsSkZG5vi0wPbLZ7HS
+      8qH3EqNjIXx+r8wGjWUBzgaNRtT0blux18Y01TxuzAmPG+VzgXxZS8gNWwSCQULhCHqyX2aD
+      xrIQZ4N6I0pqa3rstTEMNY8bY8LjRtlsUB2d2rqLrFu7hlwD/IaHRZlpsy8vhIOUzQb9bXmF
+      BbMvLYTD5G1Q4WoSAOFqEgDhahIA4WoSAOFqEgDhahIA4WoSAOFqEgDhahIA4WoSAOFqEgDh
+      ahIA4WoSAOFqEgDhahIA4WoSAOFqEgDhahIA4WoSAOFqEgDhanEFoL3lJiODAQ784lVae0Yn
+      X8G2GRsb+/ivNiOD/fQNDKNoBpMQjokrAIfeOUz9+4exU1M5cbp20s8vXzjD64feA2Ck9xZX
+      brbTfuMiTTd71XYrhGJxzQUqSDY5fGWEr322kkvdSZN+Xla5kc7BEwCkLiqkKnsJN5o+Iqwb
+      2LY9/ufOaDvbUrNpsG0r5rg8VeP/bCt2fTXF7di9KxrraFux66sSq7al6H7Fjl1f2f06Ye3j
+      2gJUbb6fPI/BmCeF4oLFk35+18g62+Tc6ROEk4tYWZx5VwAm/lHzP8G52sSu7Xh9JYNHwWaK
+      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
+      AAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Viz 3: Payments' width='192'>
+      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
+      SUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Viz 4: Busiest Locations' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='32' name='Viz 5: KPI' width='84'>
+      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
+      eHAHpgAAAABJRU5ErkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
